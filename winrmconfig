@@ -1,0 +1,34 @@
+PS C:\Windows\system32> get-service winrm
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  winrm              Windows Remote Management (WS-Manag...
+
+
+PS C:\Windows\system32> Enable-PSRemoting -force
+WinRM has been updated to receive requests.
+WinRM service type changed successfully.
+Configured LocalAccountTokenFilterPolicy to grant administrative rights remotely to local users.
+
+WinRM has been updated for remote management.
+Created a WinRM listener on HTTP://* to accept WS-Man requests to any IP on this machine.
+WinRM firewall exception enabled.
+
+PS C:\Windows\system32> winrm s winrm/config/client '@{TrustedHosts="domefront"}'
+Client
+    NetworkDelayms = 5000
+    URLPrefix = wsman
+    AllowUnencrypted = false
+    Auth
+        Basic = true
+        Digest = true
+        Kerberos = true
+        Negotiate = true
+        Certificate = true
+        CredSSP = false
+    DefaultPorts
+        HTTP = 5985
+        HTTPS = 5986
+    TrustedHosts = domefront
+
+PS C:\Windows\system32>
