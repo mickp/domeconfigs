@@ -19,7 +19,7 @@
 # localhost name resolution is handled within DNS itself.
 #	127.0.0.1       localhost
 #	::1             localhost
-    192.168.1.0     domefront
+    192.168.1.1     domefront
     192.168.1.2	    dome5u
     192.168.1.6	    domeslm
     192.168.1.4	    domedsp
